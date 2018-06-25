@@ -1,0 +1,18 @@
+version: "3"
+services:
+
+  debugger:
+    build: debugger/
+    tty: true
+
+  nginx:
+    build: nginx/
+    ports:
+      - "8080:80"
+    links:
+      - target-fpm
+
+  target-fpm:
+    build: target-fpm/
+    links:
+      - debugger
