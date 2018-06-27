@@ -3,6 +3,7 @@ services:
 
   debugger:
     build: debugger/
+    stdin_open: true
     tty: true
 
   nginx:
